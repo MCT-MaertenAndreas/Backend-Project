@@ -6,7 +6,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Documents
+namespace API.IMDB
 {
     public class Startup
     {

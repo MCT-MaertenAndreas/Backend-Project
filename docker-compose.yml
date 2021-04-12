@@ -4,7 +4,7 @@ version: '3.4'
 
 services:
   documents:
-    image: documents
+    image: backendproject
     build:
       context: .
       dockerfile: ./Dockerfile
