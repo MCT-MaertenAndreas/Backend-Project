@@ -5,6 +5,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Microsoft.AspNetCore.Mvc;
+using API.IMDB.Config;
+using API.IMDB.DataContext;
+using API.IMDB.Repositories;
+using API.IMDB.Services;
 
 namespace API.IMDB
 {
@@ -20,6 +24,9 @@ namespace API.IMDB
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.Configure<ConnectionStrings>(Configuration.GetSection("ConnectionStrings"));
+
+            services.AddDbContext<MySQLContext>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
@@ -27,11 +34,16 @@ namespace API.IMDB
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = Program.Title, Version = "v1" });
             });
 
-            // Add versioning to our app
             services.AddApiVersioning(config => {
                 config.DefaultApiVersion = new ApiVersion(1, 0);
                 config.AssumeDefaultVersionWhenUnspecified = true;
             });
+
+            services.AddTransient<IMySQLContext,MySQLContext>();
+
+            services.AddTransient<IEmployeeRepository,EmployeeRepository>();
+
+            services.AddTransient<IEmployeeService,EmployeeService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
