@@ -16,7 +16,7 @@ namespace API.IMDB.Models
         [Column("last_name")]
         public string LastName { get; set; }
         [Column("gender")]
-        public string Gender { get; set; } // enum M/F
+        public string Gender { get; set; }
         [Column("hire_date")]
         public DateTime HireDate { get; set; }
 

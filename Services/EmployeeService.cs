@@ -7,7 +7,8 @@ namespace API.IMDB.Services
 {
     public interface IEmployeeService
     {
-        Task<ICollection<Employee>> GetEmployees();
+        Task<ICollection<Employee>> GetEmployees(int page, int limit);
+        Task<Employee> GetEmployee(int id);
     }
 
     public class EmployeeService : IEmployeeService
@@ -19,9 +20,14 @@ namespace API.IMDB.Services
             this._employeeRepository = employeeRepository;
         }
 
-        public async Task<ICollection<Employee>> GetEmployees()
+        public async Task<Employee> GetEmployee(int id)
         {
-            return await this._employeeRepository.GetEmployees();
+            return await _employeeRepository.GetEmployee(id);
+        }
+
+        public async Task<ICollection<Employee>> GetEmployees(int page, int limit)
+        {
+            return await this._employeeRepository.GetEmployees(page, limit);
         }
     }
 }
