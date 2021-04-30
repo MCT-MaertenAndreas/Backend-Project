@@ -5,12 +5,12 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Microsoft.AspNetCore.Mvc;
-using API.IMDB.Config;
-using API.IMDB.DataContext;
-using API.IMDB.Repositories;
-using API.IMDB.Services;
+using API.Employees.Config;
+using API.Employees.DataContext;
+using API.Employees.Repositories;
+using API.Employees.Services;
 
-namespace API.IMDB
+namespace API.Employees
 {
     public class Startup
     {

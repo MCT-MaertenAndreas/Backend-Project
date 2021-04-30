@@ -1,12 +1,12 @@
-﻿using API.IMDB.Config;
-using API.IMDB.Models;
+﻿using API.Employees.Config;
+using API.Employees.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
 #nullable disable
 
-namespace API.IMDB.DataContext
+namespace API.Employees.DataContext
 {
     public interface IMySQLContext
     {

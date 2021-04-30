@@ -1,11 +1,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using API.IMDB.DataContext;
-using API.IMDB.Models;
+using API.Employees.DataContext;
+using API.Employees.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace API.IMDB.Repositories
+namespace API.Employees.Repositories
 {
     public interface IEmployeeRepository
     {

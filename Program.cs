@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
-namespace API.IMDB
+namespace API.Employees
 {
     public class Program
     {

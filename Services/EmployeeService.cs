@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using API.IMDB.Models;
-using API.IMDB.Repositories;
+using API.Employees.Models;
+using API.Employees.Repositories;
 
-namespace API.IMDB.Services
+namespace API.Employees.Services
 {
     public interface IEmployeeService
     {

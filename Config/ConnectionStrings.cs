@@ -1,4 +1,4 @@
-namespace API.IMDB.Config
+namespace API.Employees.Config
 {
     public class ConnectionStrings
     {

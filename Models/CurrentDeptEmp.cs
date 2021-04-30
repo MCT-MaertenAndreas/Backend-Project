@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 #nullable disable
 
-namespace API.IMDB.Models
+namespace API.Employees.Models
 {
     public partial class CurrentDeptEmp
     {

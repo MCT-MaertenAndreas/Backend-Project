@@ -2,10 +2,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using API.IMDB.Models;
-using API.IMDB.Services;
+using API.Employees.Models;
+using API.Employees.Services;
 
-namespace API.IMDB.Controllers
+namespace API.Employees.Controllers
 {
     [Route("api/")]
     [ApiController]
