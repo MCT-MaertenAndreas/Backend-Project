@@ -27,6 +27,20 @@ namespace API.Employees.Controllers
             return new OkObjectResult(await this._employeeService.GetEmployee(id));
         }
 
+        [HttpGet]
+        [Route("employee/{id}/salaries")]
+        public async Task<ActionResult<ICollection<Salary>>> GetEmployeeSalaries(int id)
+        {
+            return new OkObjectResult(await this._employeeService.GetEmployeeSalaries(id));
+        }
+
+        [HttpGet]
+        [Route("employee/{id}/titles")]
+        public async Task<ActionResult<ICollection<Title>>> GetEmployeeTitles(int id)
+        {
+            return new OkObjectResult(await this._employeeService.GetEmployeeTitles(id));
+        }
+
 
         [HttpGet]
         [Route("employees/{page?}/{limit?}")]

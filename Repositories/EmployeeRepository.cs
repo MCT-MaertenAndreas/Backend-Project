@@ -10,6 +10,8 @@ namespace API.Employees.Repositories
     public interface IEmployeeRepository
     {
         Task<Employee> GetEmployee(int id);
+        Task<ICollection<Salary>> GetEmployeeSalaries(int id);
+        Task<ICollection<Title>> GetEmployeeTitles(int id);
         Task<ICollection<Employee>> GetEmployees(int page, int limit);
     }
 
@@ -31,6 +33,22 @@ namespace API.Employees.Repositories
                 .Include(i => i.DeptManagers)
                 .Include(i => i.Salaries)
                 .FirstOrDefaultAsync();
+        }
+
+        public async Task<ICollection<Title>> GetEmployeeTitles(int id)
+        {
+            return await this._context.Employees
+                .Where(e => e.EmpNo == id)
+                .SelectMany(e => e.Titles)
+                .ToListAsync();
+        }
+
+        public async Task<ICollection<Salary>> GetEmployeeSalaries(int id)
+        {
+            return await this._context.Employees
+                .Where(e => e.EmpNo == id)
+                .SelectMany(e => e.Salaries)
+                .ToListAsync();
         }
 
         public async Task<ICollection<Employee>> GetEmployees(int page, int limit)
