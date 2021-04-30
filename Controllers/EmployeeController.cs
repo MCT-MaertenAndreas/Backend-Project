@@ -28,6 +28,13 @@ namespace API.Employees.Controllers
         }
 
         [HttpGet]
+        [Route("employee/{id}/departments")]
+        public async Task<ActionResult<ICollection<Department>>> GetEmployeeDepartments(int id)
+        {
+            return new OkObjectResult(await this._employeeService.GetEmployeeDepartments(id));
+        }
+
+        [HttpGet]
         [Route("employee/{id}/salaries")]
         public async Task<ActionResult<ICollection<Salary>>> GetEmployeeSalaries(int id)
         {

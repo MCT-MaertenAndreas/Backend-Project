@@ -8,6 +8,7 @@ namespace API.Employees.Services
     public interface IEmployeeService
     {
         Task<Employee> GetEmployee(int id);
+        Task<ICollection<Department>> GetEmployeeDepartments(int id);
         Task<ICollection<Salary>> GetEmployeeSalaries(int id);
         Task<ICollection<Title>> GetEmployeeTitles(int id);
         Task<ICollection<Employee>> GetEmployees(int page, int limit);
@@ -25,6 +26,11 @@ namespace API.Employees.Services
         public async Task<Employee> GetEmployee(int id)
         {
             return await _employeeRepository.GetEmployee(id);
+        }
+
+        public async Task<ICollection<Department>> GetEmployeeDepartments(int id)
+        {
+            return await _employeeRepository.GetEmployeeDepartments(id);
         }
 
         public async Task<ICollection<Salary>> GetEmployeeSalaries(int id)
