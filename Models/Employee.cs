@@ -1,29 +1,30 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
+
+#nullable disable
 
 namespace API.IMDB.Models
 {
-    [Table("employees")]
-    public class Employee
+    public partial class Employee
     {
-        [Column("emp_no")]
-        public int EmployeeId { get; set; }
-        [Column("birth_date")]
+        public Employee()
+        {
+            DeptEmps = new HashSet<DeptEmp>();
+            DeptManagers = new HashSet<DeptManager>();
+            Salaries = new HashSet<Salary>();
+            Titles = new HashSet<Title>();
+        }
+
+        public int EmpNo { get; set; }
         public DateTime BirthDate { get; set; }
-        [Column("first_name")]
         public string FirstName { get; set; }
-        [Column("last_name")]
         public string LastName { get; set; }
-        [Column("gender")]
         public string Gender { get; set; }
-        [Column("hire_date")]
         public DateTime HireDate { get; set; }
 
-        public ICollection<DepartmentEmployee> DepartmentsEmployed { get; set; }
-        public ICollection<DepartmentManager> DepartmentsManaging { get; set; }
-
-        public ICollection<Title> Titles { get; set; }
-        public ICollection<Salary> Salaries { get; set; }
+        public virtual ICollection<DeptEmp> DeptEmps { get; set; }
+        public virtual ICollection<DeptManager> DeptManagers { get; set; }
+        public virtual ICollection<Salary> Salaries { get; set; }
+        public virtual ICollection<Title> Titles { get; set; }
     }
 }

@@ -5,13 +5,10 @@ using System.Collections.Generic;
 
 namespace API.IMDB.Models
 {
-    public partial class Title
+    public partial class DeptEmpLatestDate
     {
         public int EmpNo { get; set; }
-        public string Title1 { get; set; }
-        public DateTime FromDate { get; set; }
+        public DateTime? FromDate { get; set; }
         public DateTime? ToDate { get; set; }
-
-        public virtual Employee EmpNoNavigation { get; set; }
     }
 }

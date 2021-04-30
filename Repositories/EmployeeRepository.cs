@@ -9,8 +9,8 @@ namespace API.IMDB.Repositories
 {
     public interface IEmployeeRepository
     {
-        Task<ICollection<Employee>> GetEmployees(int page, int limit);
         Task<Employee> GetEmployee(int id);
+        Task<ICollection<Employee>> GetEmployees(int page, int limit);
     }
 
     public class EmployeeRepository : IEmployeeRepository
@@ -24,14 +24,22 @@ namespace API.IMDB.Repositories
 
         public async Task<Employee> GetEmployee(int id)
         {
-            return await this._context.Employees.Where(e => e.EmployeeId == id).FirstOrDefaultAsync();
+            return await this._context.Employees
+                .Where(e => e.EmpNo == id)
+                .Include(i => i.Titles)
+                .Include(i => i.DeptEmps)
+                .Include(i => i.DeptManagers)
+                .Include(i => i.Salaries)
+                .FirstOrDefaultAsync();
         }
 
         public async Task<ICollection<Employee>> GetEmployees(int page, int limit)
         {
             int skip = limit * (page - 1);
 
-            return await this._context.Employees.Skip(skip).Take(limit * page - skip).ToListAsync();
+            return await this._context.Employees
+                .Skip(skip).Take(limit * page - skip)
+                .ToListAsync();
         }
     }
 }

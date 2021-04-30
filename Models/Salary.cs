@@ -1,19 +1,17 @@
-using System;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System;
+using System.Collections.Generic;
+
+#nullable disable
 
 namespace API.IMDB.Models
 {
-    [Table("salaries")]
-    public class Salary
+    public partial class Salary
     {
-        [Column("emp_no")]
-        public int EmployeeId { get; set; }
-        public Employee Employee { get; set; }
-        [Column("salary")]
-        public int Amount { get; set; }
-        [Column("from_date")]
+        public int EmpNo { get; set; }
+        public int Salary1 { get; set; }
         public DateTime FromDate { get; set; }
-        [Column("to_date")]
         public DateTime ToDate { get; set; }
+
+        public virtual Employee EmpNoNavigation { get; set; }
     }
 }

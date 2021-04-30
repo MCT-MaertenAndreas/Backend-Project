@@ -1,17 +1,22 @@
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
+
+#nullable disable
 
 namespace API.IMDB.Models
 {
-    [Table("departments")]
-    public class Department
+    public partial class Department
     {
-        [Column("dept_no")]
-        public int DepartmentId { get; set; }
-        [Column("dept_name")]
-        public string Name { get; set; }
+        public Department()
+        {
+            DeptEmps = new HashSet<DeptEmp>();
+            DeptManagers = new HashSet<DeptManager>();
+        }
 
-        public ICollection<DepartmentEmployee> Employees { get; set; }
-        public ICollection<DepartmentManager> Managers { get; set; }
+        public string DeptNo { get; set; }
+        public string DeptName { get; set; }
+
+        public virtual ICollection<DeptEmp> DeptEmps { get; set; }
+        public virtual ICollection<DeptManager> DeptManagers { get; set; }
     }
 }

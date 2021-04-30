@@ -28,7 +28,10 @@ namespace API.IMDB
 
             services.AddDbContext<MySQLContext>();
 
-            services.AddControllers();
+            // services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson(options =>
+                options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+            );
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = Program.Title, Version = "v1" });
@@ -42,8 +45,10 @@ namespace API.IMDB
             services.AddTransient<IMySQLContext,MySQLContext>();
 
             services.AddTransient<IEmployeeRepository,EmployeeRepository>();
+            services.AddTransient<IDepartementRepository,DepartmentRepository>();
 
             services.AddTransient<IEmployeeService,EmployeeService>();
+            services.AddTransient<IDepartmentService,DepartmentService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
