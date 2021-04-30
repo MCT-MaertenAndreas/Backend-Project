@@ -28,7 +28,6 @@ namespace API.Employees
 
             services.AddDbContext<MySQLContext>();
 
-            // services.AddControllers();
             services.AddControllers().AddNewtonsoftJson(options =>
                 options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
             );
