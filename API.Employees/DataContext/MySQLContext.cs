@@ -24,6 +24,12 @@ namespace API.Employees.DataContext
     {
         private readonly ConnectionStrings _connectionStrings;
 
+        public MySQLContext(ConnectionStrings connectionStrings)
+            : base()
+        {
+            this._connectionStrings = connectionStrings;
+        }
+
         public MySQLContext(DbContextOptions<MySQLContext> options, IOptions<ConnectionStrings> connectionStrings)
             : base(options)
         {
