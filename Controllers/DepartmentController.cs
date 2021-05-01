@@ -27,6 +27,20 @@ namespace API.Employees.Controllers
             return new OkObjectResult(await this._employeeService.GetDepartment(id));
         }
 
+        [HttpGet]
+        [Route("department/{id}/employees")]
+        public async Task<ActionResult<Department>> GetDepartmentEmployees(string id)
+        {
+            return new OkObjectResult(await this._employeeService.GetDepartmentEmployees(id));
+        }
+
+        [HttpGet]
+        [Route("department/{id}/managers")]
+        public async Task<ActionResult<Department>> GetDepartmentManagers(string id)
+        {
+            return new OkObjectResult(await this._employeeService.GetDepartmentManagers(id));
+        }
+
 
         [HttpGet]
         [Route("departments/{page?}/{limit?}")]
