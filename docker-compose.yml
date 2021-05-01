@@ -3,11 +3,11 @@
 version: '3.4'
 
 services:
-  api-imdb:
-    image: backendproject
+  apiemployees:
+    image: apiemployees
     build:
       context: .
-      dockerfile: ./Dockerfile
+      dockerfile: API.Employees/Dockerfile
     ports:
       - 5000
       - 5001

@@ -1,0 +1,437 @@
+{
+	"info": {
+		"_postman_id": "37f78d5c-e894-408b-ac4d-26eebafca90d",
+		"name": "Backend Project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authorization Flow",
+			"item": [
+				{
+					"name": "Register URL",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://damoncorp.b2clogin.com/damoncorp.onmicrosoft.com/B2C_1_Employees/oauth2/v2.0/authorize?client_id=3bf74775-de9d-4340-b36d-25d309736f17&response_type=code&redirect_uri=https%3A%2F%2Fjwt.ms&response_mode=query&scope=https%3A%2F%2Fdamoncorp.onmicrosoft.com%2Fapi%2Fuser.access&code_challenge_method=S256&code_challenge=-pOweGbLs2MyV6eTSLneD9HVMYL-etWDKV6-hUGUcgI",
+							"protocol": "https",
+							"host": [
+								"damoncorp",
+								"b2clogin",
+								"com"
+							],
+							"path": [
+								"damoncorp.onmicrosoft.com",
+								"B2C_1_Employees",
+								"oauth2",
+								"v2.0",
+								"authorize"
+							],
+							"query": [
+								{
+									"key": "client_id",
+									"value": "3bf74775-de9d-4340-b36d-25d309736f17"
+								},
+								{
+									"key": "response_type",
+									"value": "code"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "https%3A%2F%2Fjwt.ms"
+								},
+								{
+									"key": "response_mode",
+									"value": "query"
+								},
+								{
+									"key": "scope",
+									"value": "https%3A%2F%2Fdamoncorp.onmicrosoft.com%2Fapi%2Fuser.access"
+								},
+								{
+									"key": "code_challenge_method",
+									"value": "S256"
+								},
+								{
+									"key": "code_challenge",
+									"value": "-pOweGbLs2MyV6eTSLneD9HVMYL-etWDKV6-hUGUcgI"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Request Token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://damoncorp.b2clogin.com/damoncorp.onmicrosoft.com/B2C_1_Employees/oauth2/v2.0/token?client_id=3bf74775-de9d-4340-b36d-25d309736f17&code=eyJraWQiOiJjcGltY29yZV8wOTI1MjAxNSIsInZlciI6IjEuMCIsInppcCI6IkRlZmxhdGUiLCJzZXIiOiIxLjAifQ..XQzN8f6lPYQSdmg5.kEcHzfZ8A6Vjno6mnnn4atVYHFT0-NAGGS4cPhVZN7BNzUV2HpQ1-yvNlUbiNfs141_PsP7yAeqydIbePQWmgZLuIaQBz-zOggAbASHnQA1GZEzDrd862_70NuMUNs-NYILUr01-zEA1CeWOsbDzPweOOBUg8vgy0V9Mw0tnehcmQKIjOSS8gFVLEC5BLA7_uGh22bAgJ-HV2gDlgWEn1fsXfm2zXe4XspwaSKmK9wZ7zHaH5NTwfcj4aG41JLkbK6U5bs5CH2zlaZ6rv5R9pFG2KK9Ess6GRlrDuV4uZyExCzJwysG5pyWDZEEtYRXT_h6MFHq4GTvUaZuPd-887dOFx-PcwXScLWpz4OF1js9xRYsznSK6v4nXKLKorPOHjfEOCGVOkmFzgRrS6HlKOy34H9M8uieDGxg6KC0dca3yiB_EW1ObvHhtEhC3wzOzw0n0Cjb82DbTwZly4mkwsk2RiU7TVZLwiiUi0DQfyyfN2EzAmw3Hf6GqMUkSUYall57nIb6eQKqXJDaWMtLZOkc5Sygrt42btOHd6rXRlKKZctpyfzPxaCDp3mQmvIgE8ixspKYmtl7nNLSmf7jlHjDN-JsUVq7HEu7SUTxDlWqm-pB9FPQwPWc.BZb4Jm9fn33LJVTbItD2tA&redirect_uri=https%3A%2F%2Fjwt.ms&grant_type=authorization_code&code_verifier=MGdVxbVjs-oUHs_JmVUGzK2aVrQr0H5y3NrEs4QdZV4",
+							"protocol": "https",
+							"host": [
+								"damoncorp",
+								"b2clogin",
+								"com"
+							],
+							"path": [
+								"damoncorp.onmicrosoft.com",
+								"B2C_1_Employees",
+								"oauth2",
+								"v2.0",
+								"token"
+							],
+							"query": [
+								{
+									"key": "client_id",
+									"value": "3bf74775-de9d-4340-b36d-25d309736f17"
+								},
+								{
+									"key": "code",
+									"value": ""
+								},
+								{
+									"key": "redirect_uri",
+									"value": "https%3A%2F%2Fjwt.ms"
+								},
+								{
+									"key": "grant_type",
+									"value": "authorization_code"
+								},
+								{
+									"key": "code_verifier",
+									"value": "MGdVxbVjs-oUHs_JmVUGzK2aVrQr0H5y3NrEs4QdZV4"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "noauth"
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Departments",
+			"item": [
+				{
+					"name": "Empty Request",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{origin}}/api/departments/",
+							"host": [
+								"{{origin}}"
+							],
+							"path": [
+								"api",
+								"departments",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pagination Request",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{origin}}/api/employees/5/",
+							"host": [
+								"{{origin}}"
+							],
+							"path": [
+								"api",
+								"employees",
+								"5",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pagination and Document limit",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{origin}}/api/employees/5/100/",
+							"host": [
+								"{{origin}}"
+							],
+							"path": [
+								"api",
+								"employees",
+								"5",
+								"100",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Employees",
+			"item": [
+				{
+					"name": "Empty Request",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{origin}}/api/employees/",
+							"host": [
+								"{{origin}}"
+							],
+							"path": [
+								"api",
+								"employees",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pagination Request",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{origin}}/api/employees/15",
+							"host": [
+								"{{origin}}"
+							],
+							"path": [
+								"api",
+								"employees",
+								"15"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pagination and Document limit",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{origin}}/api/employees/5/100/",
+							"host": [
+								"{{origin}}"
+							],
+							"path": [
+								"api",
+								"employees",
+								"5",
+								"100",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Single Department",
+			"item": [
+				{
+					"name": "Get Department",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{origin}}/api/department/{{departmentId}}",
+							"host": [
+								"{{origin}}"
+							],
+							"path": [
+								"api",
+								"department",
+								"{{departmentId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Department Employees",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{origin}}/api/department/{{departmentId}}/employees",
+							"host": [
+								"{{origin}}"
+							],
+							"path": [
+								"api",
+								"department",
+								"{{departmentId}}",
+								"employees"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Department Managers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{origin}}/api/department/{{departmentId}}/managers",
+							"host": [
+								"{{origin}}"
+							],
+							"path": [
+								"api",
+								"department",
+								"{{departmentId}}",
+								"managers"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Single Employee",
+			"item": [
+				{
+					"name": "Get Employee",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{origin}}/api/employee/{{employeeId}}",
+							"host": [
+								"{{origin}}"
+							],
+							"path": [
+								"api",
+								"employee",
+								"{{employeeId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Employee Departments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{origin}}/api/employee/{{employeeId}}/departments",
+							"host": [
+								"{{origin}}"
+							],
+							"path": [
+								"api",
+								"employee",
+								"{{employeeId}}",
+								"departments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Employee Salaries",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{origin}}/api/employee/{{employeeId}}/titles",
+							"host": [
+								"{{origin}}"
+							],
+							"path": [
+								"api",
+								"employee",
+								"{{employeeId}}",
+								"titles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Employee Titles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{origin}}/api/employee/{{employeeId}}/salaries",
+							"host": [
+								"{{origin}}"
+							],
+							"path": [
+								"api",
+								"employee",
+								"{{employeeId}}",
+								"salaries"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer"
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

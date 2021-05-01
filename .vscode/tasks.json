@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/API.IMDB.csproj",
+                "${workspaceFolder}/API.Employees/API.Employees.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -19,7 +19,7 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}/API.IMDB.csproj",
+                "${workspaceFolder}/API.Employees/API.Employees.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -32,7 +32,7 @@
             "args": [
                 "watch",
                 "run",
-                "${workspaceFolder}/API.IMDB.csproj",
+                "${workspaceFolder}/API.Employees/API.Employees.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -45,14 +45,14 @@
                 "build"
             ],
             "dockerBuild": {
-                "tag": "backendproject:dev",
+                "tag": "backend:dev",
                 "target": "base",
-                "dockerfile": "${workspaceFolder}/Dockerfile",
+                "dockerfile": "${workspaceFolder}/API.Employees/Dockerfile",
                 "context": "${workspaceFolder}",
                 "pull": true
             },
             "netCore": {
-                "appProject": "${workspaceFolder}/API.IMDB.csproj"
+                "appProject": "${workspaceFolder}/API.Employees/API.Employees.csproj"
             }
         },
         {
@@ -62,13 +62,13 @@
                 "build"
             ],
             "dockerBuild": {
-                "tag": "backendproject:latest",
-                "dockerfile": "${workspaceFolder}/Dockerfile",
+                "tag": "backend:latest",
+                "dockerfile": "${workspaceFolder}/API.Employees/Dockerfile",
                 "context": "${workspaceFolder}",
                 "pull": true
             },
             "netCore": {
-                "appProject": "${workspaceFolder}/API.IMDB.csproj"
+                "appProject": "${workspaceFolder}/API.Employees/API.Employees.csproj"
             }
         },
         {
@@ -79,7 +79,7 @@
             ],
             "dockerRun": {},
             "netCore": {
-                "appProject": "${workspaceFolder}/API.IMDB.csproj",
+                "appProject": "${workspaceFolder}/API.Employees/API.Employees.csproj",
                 "enableDebugging": true
             }
         },
@@ -91,7 +91,7 @@
             ],
             "dockerRun": {},
             "netCore": {
-                "appProject": "${workspaceFolder}/API.IMDB.csproj"
+                "appProject": "${workspaceFolder}/API.Employees/API.Employees.csproj"
             }
         }
     ]
