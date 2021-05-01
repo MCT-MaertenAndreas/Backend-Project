@@ -4,11 +4,13 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using API.Employees.Models;
 using API.Employees.Services;
+using Microsoft.AspNetCore.Authorization;
 
 namespace API.Employees.Controllers
 {
-    [Route("api/")]
+    [Authorize]
     [ApiController]
+    [Route("api/")]
     public class EmployeeController : ControllerBase
     {
         private readonly ILogger<EmployeeController> _logger;

@@ -9,6 +9,8 @@ using API.Employees.Config;
 using API.Employees.DataContext;
 using API.Employees.Repositories;
 using API.Employees.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.Identity.Web;
 
 namespace API.Employees
 {
@@ -31,6 +33,14 @@ namespace API.Employees
             services.AddControllers().AddNewtonsoftJson(options =>
                 options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
             );
+
+            services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            });
+            services.AddMicrosoftIdentityWebApiAuthentication(Configuration, "AzureAdB2C");
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = Program.Title, Version = "v1" });
@@ -64,6 +74,7 @@ namespace API.Employees
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
