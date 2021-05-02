@@ -8,7 +8,7 @@ Configuration files can be found in the project directory, all values used are f
 
 ## Docker
 
-Docker container images can be found [here](https://hub.docker.com/yimura/backend-project).
+Docker container images can be found [here](https://hub.docker.com/repository/docker/yimura/backend-project).
 
 ## Example Requests
 
