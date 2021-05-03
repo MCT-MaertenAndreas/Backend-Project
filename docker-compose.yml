@@ -4,10 +4,10 @@ version: '3.4'
 
 services:
   apiemployees:
-    image: apiemployees
+    container_name: employee_backend
+    image: employee_backend
     build:
       context: .
       dockerfile: API.Employees/Dockerfile
     ports:
-      - 5000
-      - 5001
+      - 5000:5000
